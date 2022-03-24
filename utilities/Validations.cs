@@ -17,8 +17,6 @@ namespace ValidationsRegEx.utilities
         Email
     }
 
-    
-
     public static class Validations
     {
         static class RegExPatterns
