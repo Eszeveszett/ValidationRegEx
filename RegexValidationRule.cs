@@ -11,15 +11,15 @@ namespace ValidationRegEx
         CultureInfo cultureInfo)
         {
             ValidationResult result = ValidationResult.ValidResult;
-            if (!String.IsNullOrEmpty(this.RegexText))
-            {
+            //if (!String.IsNullOrEmpty(this.RegexText))
+            //{
                 
-                string text = value as string ?? String.Empty;
+            //    string text = value as string ?? String.Empty;
 
                 
-                if (!Regex.IsMatch(text, this.RegexText, this.RegexOptions))
-                    result = new ValidationResult(false, this.ErrorMessage);
-            }
+            //    if (!Regex.IsMatch(text, this.RegexText, this.RegexOptions))
+            //        result = new ValidationResult(false, this.ErrorMessage);
+            //}
             return result;
         }
     }
