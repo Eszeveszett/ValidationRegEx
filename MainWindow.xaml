@@ -1,0 +1,94 @@
+﻿<Window x:Class="ValidationRegEx.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:common="using:Microsoft.Toolkit.Uwp.SampleApp.Common"
+        
+        xmlns:extensions="using:Microsoft.Toolkit.Uwp.UI.Extensions"
+        xmlns:local="clr-namespace:ValidationRegEx"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <!--
+        <local:NumericTextBoxConvertor x:Key="NumericTextBoxConvertor"/>        
+        -->
+        
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label
+                x:Name="nummber_label"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Content="Number Check"
+                FontSize="20" />
+            <TextBox
+                x:Name="number_tbx"
+                Grid.Row="1"
+                Height="49"
+                Margin="22"
+                VerticalAlignment="Center"
+                VerticalContentAlignment="Center"
+                TextChanged="number_tbx_TextChanged"/>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label
+                x:Name="phone_label"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Content="Phone Check"
+                FontSize="20" />
+            <TextBox
+                x:Name="phone_tbx"
+                Grid.Row="1"
+                Height="49"
+                Margin="22"
+                VerticalAlignment="Center"
+                VerticalContentAlignment="Center"
+                TextChanged="phone_tbx_TextChanged"/>
+        </Grid>
+
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label
+                x:Name="email_label"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Content="Email Check"
+                FontSize="20" />
+            <TextBox
+                x:Name="email_tbx"
+                Grid.Row="1"
+                Height="49"
+                Margin="22"
+                VerticalAlignment="Center"
+                VerticalContentAlignment="Center"
+                TextChanged="email_tbx_TextChanged"/>
+        </Grid>
+    </Grid>
+</Window>
