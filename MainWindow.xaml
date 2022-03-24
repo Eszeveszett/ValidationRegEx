@@ -1,61 +1,96 @@
-﻿<Window x:Class="ValidationRegEx.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:common="using:Microsoft.Toolkit.Uwp.SampleApp.Common"
-        
-        xmlns:extensions="using:Microsoft.Toolkit.Uwp.UI.Extensions"
-        xmlns:local="clr-namespace:ValidationRegEx"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
-        WindowStartupLocation="CenterScreen">
+﻿<Window
+    x:Class="ValidationRegEx.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:common="using:Microsoft.Toolkit.Uwp.SampleApp.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:extensions="using:Microsoft.Toolkit.Uwp.UI.Extensions"
+    xmlns:local="clr-namespace:ValidationRegEx"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
     <Window.Resources>
         <!--
-        <local:NumericTextBoxConvertor x:Key="NumericTextBoxConvertor"/>        
+        <local:NumericTextBoxConvertor x:Key="NumericTextBoxConvertor"/>
         -->
-        
+
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        
 
-        <StackPanel Grid.Row="0" Grid.Column="0">
-            <TextBox VerticalAlignment="Top" 
-                PreviewTextInput="NumberValidationTextBox"/>
-            <!---->
-        </StackPanel>
 
-        <StackPanel Grid.Row="0" Grid.Column="1">
-            <TextBox Name="txtProductCode"
-                Text="{Binding Path=ProductCode}"
-                     />
-            <!--
-                RegexValidator.RegexText="^[a-zA-Z]{3}\.[0-9]{3}$"
-                RegexValidator.ErrorMessage="Invalid product code."            
-            -->
-        </StackPanel>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label
+                x:Name="nummber_label"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Content="Number Check"
+                FontSize="20" />
+            <TextBox
+                x:Name="number_tbx"
+                Grid.Row="1"
+                Height="49"
+                Margin="22"
+                VerticalAlignment="Center"
+                VerticalContentAlignment="Center"
+                TextChanged="number_tbx_TextChanged"/>
+        </Grid>
 
-        <StackPanel Grid.Row="0" Grid.Column="2">
-            <TextBox x:Name="TBO_Test" />
-            <!--
-                        <TextBox extensions:TextBoxRegex.Regex="^\s*\+?\s*([0-9][\s-]*){9,}$" />
-            <TextBox extensions:TextBoxRegex.ValidationMode="Forced"
-            extensions:TextBoxRegex.ValidationType="PhoneNumber"
-            Text="+61616161611" />
-            <TextBox extensions:TextBoxRegex.ValidationType="Email"   />
-            <TextBox extensions:TextBoxRegex.ValidationMode="Forced"
-            extensions:TextBoxRegex.ValidationType="Decimal" />
-            -->
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label
+                x:Name="phone_label"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Content="Phone Check"
+                FontSize="20" />
+            <TextBox
+                x:Name="phone_tbx"
+                Grid.Row="1"
+                Height="49"
+                Margin="22"
+                VerticalAlignment="Center"
+                VerticalContentAlignment="Center"
+                TextChanged="phone_tbx_TextChanged"/>
+        </Grid>
 
-        </StackPanel>
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Label
+                x:Name="email_label"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Content="Email Check"
+                FontSize="20" />
+            <TextBox
+                x:Name="email_tbx"
+                Grid.Row="1"
+                Height="49"
+                Margin="22"
+                VerticalAlignment="Center"
+                VerticalContentAlignment="Center"
+                TextChanged="email_tbx_TextChanged"/>
+        </Grid>
     </Grid>
 </Window>
